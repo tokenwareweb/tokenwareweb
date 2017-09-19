@@ -1,0 +1,14 @@
+.issue-row {
+  margin-bottom: 10px;
+}
+
+.issue-row-message {
+  margin-bottom: 10px;
+  background-color: yellow;
+}
+
+.issue-description {
+  text-align: left;
+  font-size: medium;
+  color: gray;
+}

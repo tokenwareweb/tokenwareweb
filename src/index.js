@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
-import Issue from './Issue';
+import App from './App';
 import registerServiceWorker from './registerServiceWorker';
 import Contract from './contract.js';
 const Eth = require('ethjs-query')
@@ -33,25 +33,10 @@ function startApp() {
 function initContract(contract) {
     const MiniToken = contract(Contract.abi)
     window.miniToken = MiniToken.at(Contract.address)
-    //   listenForClicks(miniToken)
 }
 
-function tick() {
-    window.miniToken.getIssue(17).then(function (result) {
-        if (typeof window.web3 !== 'undefined') {
-        const element = <Issue assignedTo={result['assignedTo']}
-                               escrow={result['escrow'].toNumber()}
-                               value={result['value'].toNumber()} />
-        ReactDOM.render(
-            element,
-            document.getElementById('root')
-        );
-        }
-    });
-}
-
-const element = <Issue  />;
+const element = <App  />;
 ReactDOM.render(
     element,
     document.getElementById('root'));
-// setInterval(tick, 1000);
+
